@@ -1,4 +1,4 @@
 [submodule "freertos"]
 	path = freertos
 	url = https://github.com/aws/amazon-freertos.git
-	branch = release
+	branch = feature/idf_uplevel_v4.2

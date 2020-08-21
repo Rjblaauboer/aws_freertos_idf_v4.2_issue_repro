@@ -1,3 +1,7 @@
+/**
+ * Barebones main file simplified from a cypress example.
+ */
+
 /* FreeRTOS includes. */
 #include "FreeRTOS.h"
 #include "task.h"
@@ -35,8 +39,6 @@ void vApplicationDaemonTaskStartupHook( void )
  */
 void vApplicationIdleHook( void )
 {
-    /* FIX ME. If necessary, update to application idle periodic actions. */
-
     static TickType_t xLastPrint = 0;
     TickType_t xTimeNow;
     const TickType_t xPrintFrequency = pdMS_TO_TICKS( 5000 );
@@ -85,22 +87,6 @@ void vAssertCalled(const char * pcFile,
 	}
 	taskENABLE_INTERRUPTS();
 }
-/*-----------------------------------------------------------*/
-
-/**
- * @brief User defined application hook need by the FreeRTOS-Plus-TCP library.
- */
-#if ( ipconfigUSE_LLMNR != 0 ) || ( ipconfigUSE_NBNS != 0 ) || ( ipconfigDHCP_REGISTER_HOSTNAME == 1 )
-    const char * pcApplicationHostnameHook(void)
-    {
-        /* FIX ME: If necessary, update to applicable registration name. */
-
-        /* This function will be called during the DHCP: the machine will be registered
-         * with an IP address plus this name. */
-        return clientcredentialIOT_THING_NAME;
-    }
-
-#endif
 
 /* configUSE_STATIC_ALLOCATION is set to 1, so the application must provide an
  * implementation of vApplicationGetIdleTaskMemory() to provide the memory that is
