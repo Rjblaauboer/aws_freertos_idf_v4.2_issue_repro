@@ -25,7 +25,7 @@ In short:
 ## Issue 
 
 REPRO
-- Follow instructions until (and including) first cmake build step (`cmake -S . -B ...`)
+- Follow instructions until (and including) first cmake build step.
 
 EXPECTED
 - Build succeeds
